@@ -19,8 +19,8 @@ import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.Response;
 
-public class AutoUpdateService extends Service{
 
+public class AutoUpdateService extends Service {
     public AutoUpdateService() {
     }
 

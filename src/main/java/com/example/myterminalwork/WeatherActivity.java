@@ -35,7 +35,6 @@ import okhttp3.Callback;
 import okhttp3.Response;
 
 public class WeatherActivity extends AppCompatActivity {
-
     private ScrollView weatherLayout;
     private TextView titleCity;
     private TextView titleUpdateTime;
@@ -108,7 +107,7 @@ public class WeatherActivity extends AppCompatActivity {
     //根据天气的id请求城市天气
     public void requestWeather(final String weatherId){
         String weatherUrl= "http://guolin.tech/api/weather?cityid="
-                +weatherId+"&key=de1ac7af7e1c4ea9b6ec3f8739dfea66";
+                +weatherId+"&key=236980b85d244859a42643d1d8144f04";
         HttpUtil.sendOkHttpRequest(weatherUrl, new Callback() {
 
             @Override
@@ -189,7 +188,7 @@ public class WeatherActivity extends AppCompatActivity {
         weatherInfoText.setText(weatherInfo);
         forecastLayout.removeAllViews();
         for(Forecast forecast:weather.forecastList){
-            View view= LayoutInflater.from(this)
+            View view=LayoutInflater.from(this)
                     .inflate(R.layout.forecast_item,forecastLayout,false);
             TextView dateText=(TextView)view.findViewById(R.id.data_text);
             TextView infoText=(TextView)view.findViewById(R.id.info_text);
@@ -250,3 +249,4 @@ public class WeatherActivity extends AppCompatActivity {
                 .show();
     }
 }
+
